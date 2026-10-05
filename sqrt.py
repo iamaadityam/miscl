@@ -13,3 +13,6 @@ while abs(mean**2 - N)> 0.000001:
         mean = (up+low)/2
         
 print(mean)
+
+istrue = (5//2 == 2/2)
+print(istrue)
