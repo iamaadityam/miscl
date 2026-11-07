@@ -6,23 +6,21 @@ def linear(target):
     print("-1")
     return False
 
-def binary(lst, target):
-    mid = len(lst) // 2
+def binary(lst, target, offset=0):
     if len(lst) == 0:
+        print(-1)
         return False
+    mid = len(lst) // 2
     if lst[mid] > target:
-        lst = lst[:mid]
-        binary(lst, target)
-    if lst[mid] < target:
-        lst = lst[mid:]
-        binary(lst, target)
-    if lst[mid] == target:
-        print(len(lst))
+        return binary(lst[:mid], target, offset)
+    elif lst[mid] < target:
+        return binary(lst[mid+1:], target, offset+mid+1)
+    else:
+        print(offset + mid)
         return True
-        
+
 n = int(input())
-lst = input()
-lst = list(map(int, lst.split()))
+lst = list(map(int, input().split()))
 target = int(input())
 linear(target)
 binary(lst, target)
