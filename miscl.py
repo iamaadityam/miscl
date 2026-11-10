@@ -8,4 +8,4 @@ for i in range(len(lls)):
     if lls[i][1] > lowest:
         lowest = lls[i][1]
         j = i
-        print(lls[j][0])
+        print("highest:", lls[j][0])
